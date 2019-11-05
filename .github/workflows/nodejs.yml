@@ -20,6 +20,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
+        chmod +x checkJS.sh
         npm run checkJS
         npm run build --if-present
         npm test --if-present
