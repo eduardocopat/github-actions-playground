@@ -16,13 +16,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: eslint
-      uses: reviewdog/action-eslint@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        reporter: github-pr-review # Change reporter.
-        eslint_flags: 'src/'
+        node-version: ${{ matrix.node-version }
     - name: npm install, build, and test
       run: |
         npm install
