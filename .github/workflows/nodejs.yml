@@ -17,6 +17,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: eslint
+      uses: reviewdog/action-eslint@v1
+      with:
+        github_token: ${{ secrets.github_token }}
+        reporter: github-pr-review # Change reporter.
+        eslint_flags: 'src/'
     - name: npm install, build, and test
       run: |
         npm install
@@ -24,17 +30,6 @@ jobs:
         npm run checkJS --silent
         npm run build --if-present
         npm test --if-present
-    - name: eslint-github-pr-check
-      uses: reviewdog/action-eslint@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        eslint_flags: 'testdata/'
-    - name: eslint-github-pr-review
-      uses: reviewdog/action-eslint@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        reporter: github-pr-review
-        eslint_flags: 'testdata/'        
       env:
         CI: true
     timeout-minutes: 3
