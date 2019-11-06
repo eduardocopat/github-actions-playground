@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: dhmod2
-        run: sudo su
+        run: ls /github
       - name: dhmod2a
         run: sudo npm install
       - name: eslint
