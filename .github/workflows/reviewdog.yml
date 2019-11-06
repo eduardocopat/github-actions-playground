@@ -6,10 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: dhmod
+        run: sh -c "sudo chmod -R 777 /github"
       - name: eslint
         uses: reviewdog/action-eslint@v1
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
           eslint_flags: '/'
-      - run: sh -c "sudo chmod -R 777 /github"
+     
