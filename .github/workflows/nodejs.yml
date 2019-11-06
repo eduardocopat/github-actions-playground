@@ -20,10 +20,10 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
+        sh -c "lint-diff HEAD^..HEAD"
         chmod +x checkJS.sh
         npm run checkJS --silent
         npm run build --if-present
         npm test --if-present
-        sh -c "lint-diff HEAD^..HEAD"
       env:
         CI: true
