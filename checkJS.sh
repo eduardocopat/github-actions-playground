@@ -3,7 +3,7 @@
 echo "test"
 exit_code=0
 
-if [ ! grep --color=auto --recursive -P -n --include *.js --exclude-dir node_modules "hello" src/ ]
+if ! grep --color=auto --recursive -P -n --include *.js --exclude-dir node_modules "hello" src/ 
 then 
    exit_code=exit_code + 1; 
 fi
