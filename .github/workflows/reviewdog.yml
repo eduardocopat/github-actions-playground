@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: dhmod
-        run: sh -c "sudo chmod -R 777 /github"
       - name: dhmod2
         run: sh -c "sudo chmod -R 777 /"
       - name: eslint
