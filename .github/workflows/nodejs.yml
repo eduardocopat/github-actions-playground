@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm install
+        npm install --save-dev
         sh -c "lint-diff HEAD^..HEAD"
         chmod +x checkJS.sh
         npm run checkJS --silent
