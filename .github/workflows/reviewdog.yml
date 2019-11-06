@@ -12,3 +12,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
           eslint_flags: '/'
+      - run: sh -c "sudo chmod -R 777 /github"
