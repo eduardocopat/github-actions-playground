@@ -14,3 +14,8 @@ then
 else
   exit_code=$((exit_code+1))
 fi
+
+
+echo $exit_code
+
+exit exit_code
