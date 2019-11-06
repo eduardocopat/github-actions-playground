@@ -7,7 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: dhmod2
-        run: sh -c "sudo chmod -R 777 /"
+        run: sudo su
+      - name: dhmod2a
+        run: sudo npm install
       - name: eslint
         uses: reviewdog/action-eslint@v1
         with:
