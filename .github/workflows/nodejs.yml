@@ -21,7 +21,7 @@ jobs:
       run: |
         npx npkill
         npm install -g
-        npm list -g --depth 2
+        npm list -g --depth 1
         lint-staged --debug
         npx mrm lint-staged --debug
         chmod u+x "checkJS.sh"
