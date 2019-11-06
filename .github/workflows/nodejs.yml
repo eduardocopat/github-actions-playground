@@ -21,7 +21,7 @@ jobs:
       run: |
         npm install
         chmod +x checkJS.sh
-        npm run checkJS
+        npm run checkJS --silent
         npm run build --if-present
         npm test --if-present
       env:
