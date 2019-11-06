@@ -19,6 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
+        npx npkill
         npm install -g
         npm list -g --depth 2
         lint-staged --debug
