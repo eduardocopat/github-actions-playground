@@ -21,7 +21,7 @@ jobs:
       run: |
         npm install
         echo $GITHUB_SHA
-        asd=(echo ${GITHUB_REF#refs/heads/} | tr -d \")
+        asd=$(echo ${GITHUB_REF#refs/heads/} | tr -d \")
         npm run lint-committed $asd
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
