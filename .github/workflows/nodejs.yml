@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+   
+        run: echo "$STEPS_CONTEXT":  
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -24,12 +26,13 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        echo ${GITHUB_REF##*/}
-        echo ${{ github.ref }}
-        npm run lint-committed ${{ github.ref##*/ }}
+        echo ${BRANCH_NAME}
+        npm run lint-committed ${{ BRANCH_NAME }}
+        echo ${{ BRANCH_NAME }}
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
         npm run build --if-present
         npm test --if-present
       env:
         CI: true
+        BRANCH_NAME: ${{GITHUB_REF##*/}}
