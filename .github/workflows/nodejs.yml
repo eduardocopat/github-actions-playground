@@ -21,7 +21,7 @@ jobs:
       run: |
         npm install
         echo $GITHUB_SHA
-        BRANCH=$(echo ${GITHUB_REF#refs/heads/} | tr -d \")
+        LINT_BRANCH=$(echo ${GITHUB_REF#refs/heads/} | tr -d \")
         chmod u+x "run-lint-commited.sh"
         npm run run-lint-committed
         chmod u+x "checkJS.sh"
