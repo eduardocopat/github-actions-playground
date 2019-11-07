@@ -23,7 +23,7 @@ jobs:
         echo $GITHUB_SHA
         export LINT_BRANCH=$(echo ${GITHUB_REF})
         chmod u+x "run-lint-commited.sh"
-        npx eslint
+        npx eslint .
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
         npm run build --if-present
