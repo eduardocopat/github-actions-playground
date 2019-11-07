@@ -21,7 +21,8 @@ jobs:
       run: |
         npm install
         echo $GITHUB_SHA
-        npm run lint-committed 
+        branch=$(eval echo $GITHUB_SHA)
+        npm run lint-committed $branch
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
         npm run build --if-present
