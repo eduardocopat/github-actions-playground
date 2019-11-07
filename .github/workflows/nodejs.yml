@@ -22,7 +22,7 @@ jobs:
         npm install
         echo $GITHUB_SHA
         branch=$(eval echo $GITHUB_SHA)
-        npm run lint-committed $branch
+        npm run lint-committed $(echo ${GITHUB_REF#refs/heads/})
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
         npm run build --if-present
