@@ -1,1 +1,1 @@
-npm run lint-committed $LINT_BRANCH
+npx lint-committed $LINT_BRANCH
