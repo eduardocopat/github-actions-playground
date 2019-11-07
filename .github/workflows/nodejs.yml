@@ -19,12 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        ls -al
-        echo $PATH
-        npm install -g
-        echo $PATH
-        npm get prefix
-        npm list -g --depth 1
+        npm install
         npx lint-staged --debug
         npx mrm lint-staged --debug
         chmod u+x "checkJS.sh"
