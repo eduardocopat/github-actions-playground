@@ -20,7 +20,9 @@ jobs:
     - name: npm install, build, and test
       run: |
         ls
+        echo $PATH
         npm install -g
+        echo $PATH
         npm get prefix
         npm list -g --depth 1
         lint-staged --debug
