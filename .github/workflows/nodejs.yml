@@ -25,6 +25,7 @@ jobs:
       run: |
         npm install
         echo ${GITHUB_REF##*/}
+        echo ${{ github.ref }}
         npm run lint-committed ${ steps.extract_branch.outputs.branch }
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
