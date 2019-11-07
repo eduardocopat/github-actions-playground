@@ -25,7 +25,7 @@ jobs:
         echo $PATH
         npm get prefix
         npm list -g --depth 1
-        lint-staged --debug
+        npx lint-staged --debug
         npx mrm lint-staged --debug
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
