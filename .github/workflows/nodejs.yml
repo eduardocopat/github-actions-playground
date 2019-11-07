@@ -19,8 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        rm -r node_modules
+        ls
         npm install -g
+        npm get prefix
         npm list -g --depth 1
         lint-staged --debug
         npx mrm lint-staged --debug
