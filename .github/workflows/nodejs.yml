@@ -20,7 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        echo ${{ BRANCH_NAME }}
         npm run lint-committed ${{ BRANCH_NAME }}
         echo ${{ BRANCH_NAME }}
         chmod u+x "checkJS.sh"
