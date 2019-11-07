@@ -20,8 +20,9 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        echo ${{GITHUB_REF##*/}}
-        npm run lint-committed ${{GITHUB_REF##*/}}
+        echo ${{ GITHUB_REF##*/ }}
+        echo ${{ GITHUB_SHA }}
+        npm run lint-committed ${{ GITHUB_REF##*/ }}
         chmod u+x "checkJS.sh"
         npm run checkJS --silent
         npm run build --if-present
