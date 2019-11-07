@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "checkJS": "./checkJS.sh",
-	"lint-committed": "lint-committed"
+    "run-lint-committed": "./lint-committed.sh"
   },
   "dependencies": {
     "express": "^4.13.3"
