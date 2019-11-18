@@ -29,7 +29,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]
